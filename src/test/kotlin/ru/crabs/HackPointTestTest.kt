@@ -1,12 +1,15 @@
 package ru.crabs
-import io.micronaut.runtime.EmbeddedApplication
-import io.micronaut.test.extensions.kotest.annotation.MicronautTest
+
 import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+import io.micronaut.test.extensions.kotest.annotation.MicronautTest
 
 @MicronautTest
-class HackPointTestTest(private val application: EmbeddedApplication<*>): StringSpec({
+class HackPointTestTest : StringSpec() {
 
-    "test the server is running" {
-        assert(application.isRunning)
+    init {
+        "1 eq 1" {
+            1 shouldBe 1
+        }
     }
-})
+}
